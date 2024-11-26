@@ -8,12 +8,14 @@ import Test from "./pages/test_skill/Test";
 import Detail_Test from "./pages/test_skill/Detail_Test";
 import Proyek from "./pages/Proyek/Proyek";
 import DashboardPage from "./pages/Dashboard/dashboardPage";
+ import LandingPage from "./pages/LandingPage";
+import LayoutLanding from "./layouts/LandingLayout";
 
 
 export default function App() {
   return (
-    <>
       <Routes>
+        <Route path="/" element={<LayoutLanding />}/>
         <Route path="/dashboard" element={<DashboardPage/>} />
         <Route path="/dashboard/myproject" element={<MyProject />} />
         <Route path="/dashboard/myproject/:id" element={<DetailProject />} />
@@ -24,6 +26,5 @@ export default function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/proyek" element={<Proyek />}></Route>
       </Routes>
-    </>
   );
 }

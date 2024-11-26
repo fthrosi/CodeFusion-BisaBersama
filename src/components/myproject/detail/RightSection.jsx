@@ -1,8 +1,4 @@
 import React, { useState } from 'react'
-import { color } from '../../../utils/constants'
-import Calendar from '../../../assets/icon/calendar.png'
-import Team from '../../../assets/icon/team.png'
-import Skillset from '../../../assets/icon/skillset.png'
 
 const RightSection = ({data}) => {
     return (
@@ -26,7 +22,7 @@ const RightSection = ({data}) => {
                                 return (
                                     <div className="rounded-xl shadow-md mb-2 p-2" key={index}>
                                         <div className="flex flex-row justify-between">
-                                            <p className="self-center">{task}</p>
+                                            <p className="self-center w-80 md:w-full">{task}</p>
                                             { changeTask ? 
                                                 <div className="rounded-full w-8 h-8 bg-green-300 cursor-pointer" onClick={() => setChange(false)} />
                                             :

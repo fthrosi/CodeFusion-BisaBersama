@@ -9,82 +9,12 @@ import {
 const DashboardPage = () => {
   return (
     <div className="flex flex-row">
-      {/* Sidebar */}
-      <div className="w-[400px] min-h-screen pt-6 bg-white drop-shadow hidden lg:block xl:block">
-        <div className="flex h-full flex-col justify-between">
-          <div>
-            <Link to={""}>
-              <h1 className="font-bold text-3xl mb-6 ms-7">
-                Bisa <span className="text-[#0077B6]">Bersama</span>
-              </h1>
-            </Link>
-            <div className="flex flex-col justify-between">
-              <div className="flex flex-col gap-y-6 ms-7">
-                <Link className="flex gap-x-[18px]" to={""}>
-                  <img src={"../chart_85071601.png"} alt="" />
-                  <span className="font-semibold text-xl">Dashboard</span>
-                </Link>
-                <Link className="flex gap-x-[18px]" to={""}>
-                  <img
-                    src={"../project-management_121486814.png"}
-                    alt=""
-                  />
-                  <span className="font-semibold text-xl">Proyek</span>
-                </Link>
-                <Link className="flex gap-x-[18px]" to={""}>
-                  <img src={"../settings_64591711.png"} alt="" />
-                  <span className="font-semibold text-xl">Proyek Saya</span>
-                </Link>
-                <Link className="flex gap-x-[18px]" to={""}>
-                  <img src={"../clipboard_55443891.png"} alt="" />
-                  <span className="font-semibold text-xl">Test Skill</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <button className="w-full bg-[#0077B6] text-white font-bold text-3xl py-2">
-            Keluar
-          </button>
-        </div>
-      </div>
-      {/* Sidebar */}
       <div className="flex flex-col w-screen">
-        <div className="flex flex-col">
-          {/* Navbar */}
-          <div className="w-full bg-white py-[18px] px-[18px] drop-shadow flex">
-            <button className="lg:hidden xl:hidden">
-              <svg
-                className="me-10 size-4 fill-[#33C3E0]"
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="100"
-                height="100"
-                viewBox="0 0 30 30"
-              >
-                <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
-              </svg>
-            </button>
-            <div className="w-full flex justify-end md:justify-between lg:justify-between xl:justify-between">
-              <input
-                className="border border-gray-300 p-1 w-[300px] rounded-xl hidden md:block lg:block xl:block"
-                type="text"
-                placeholder="Search"
-              />
-              <div className="flex gap-x-2.5 items-center">
-                <img src={"../user_10904350.png"} alt="" />
-                <span className="font-semibold text-xs">John Doe</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Navbar */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-y-4 gap-x-6 p-5">
           <div className="col-span-1 lg:col-span-2 flex flex-col gap-y-[18px]">
             <div className="flex flex-col gap-y-[18px]">
               <h1 className="text-[28px] font-semibold">Akses Cepat</h1>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-x-3 gap-y-3">
-                {/* Akses Cepat */}
                 <div className="bg-white drop-shadow p-2.5 rounded-xl flex flex-col gap-y-[22px] w-[160px] h-[150px]">
                   <div className="flex items-center gap-x-2.5">
                     <img
@@ -186,9 +116,9 @@ const DashboardPage = () => {
                 {rekomendasiProjek.map((rekomProjek, index) => {
                   return (
                     <Link
-                      to={""}
+                      to={"/proyek"}
                       key={index}
-                      className="bg-white p-2.5 drop-shadow flex flex-col gap-y-4 rounded-xl"
+                      className="bg-white p-2.5 drop-shadow flex flex-col gap-y-4 rounded-xl transition-colors hover:bg-gray-100"
                     >
                       <img
                         src={
@@ -224,7 +154,7 @@ const DashboardPage = () => {
               <div className="flex flex-col gap-y-5">
                 {proyekTerbaru.map((proyekTerbaru, index) => {
                   return (
-                    <Link to={""} key={index} className="flex flex-col gap-y-2">
+                    <Link to={"/proyek"} key={index} className="flex flex-col gap-y-2 bg-white hover:bg-gray-100 p-2 transition-colors rounded-xl">
                       <div className="flex gap-x-3">
                         <img
                           src={
@@ -234,7 +164,7 @@ const DashboardPage = () => {
                         />
                         <div className="flex flex-col gap-y-1">
                           <span>{proyekTerbaru.title}</span>
-                          <p>Batas Waktu {proyekTerbaru.deadline}</p>
+                          <p>Batas Waktu <span className="text-[#0077B6]">{proyekTerbaru.deadline}</span></p>
                         </div>
                       </div>
                       <div className="flex justify-between">
@@ -273,9 +203,9 @@ const DashboardPage = () => {
                             <p>{skill.tech}</p>
                             <p>Estimasi {skill.eta}</p>
                           </div>
-                          <button className="bg-[#33C3E0] rounded-lg w-fit py-1 px-10 text-white font-semibold">
+                          <Link to={"/test"} className="transition-colors bg-[#33C3E0] hover:bg-[#33A4BA] rounded-lg w-fit py-1 px-10 text-white font-semibold">
                             Ambil
-                          </button>
+                          </Link>
                         </div>
                       </div>
                     </div>

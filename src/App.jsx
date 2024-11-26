@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/Auth/Login";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Proyek from "./pages/Proyek/Proyek";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,7 +8,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/proyek" element={<Proyek />}></Route>
       </Routes>
     </>
   );

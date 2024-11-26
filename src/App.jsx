@@ -7,11 +7,14 @@ import TestSkill from "./pages/test_skill/TestSkillPage";
 import Test from "./pages/test_skill/Test";
 import Detail_Test from "./pages/test_skill/Detail_Test";
 import Proyek from "./pages/Proyek/Proyek";
+import DashboardPage from "../pages/Dashboard/dashboardPage";
+
 
 export default function App() {
   return (
     <>
       <Routes>
+        <Route path="/dashboard" element={<DashboardPage/>} />
         <Route path="/dashboard/myproject" element={<MyProject />} />
         <Route path="/dashboard/myproject/:id" element={<DetailProject />} />
         <Route path="/tests" element={<TestSkill />} />

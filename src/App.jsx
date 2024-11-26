@@ -7,7 +7,7 @@ import TestSkill from "./pages/test_skill/TestSkillPage";
 import Test from "./pages/test_skill/Test";
 import Detail_Test from "./pages/test_skill/Detail_Test";
 import Proyek from "./pages/Proyek/Proyek";
-import DashboardPage from "../pages/Dashboard/dashboardPage";
+import DashboardPage from "./pages/Dashboard/dashboardPage";
 
 
 export default function App() {

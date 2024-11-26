@@ -27,11 +27,11 @@ export default function ModalDetailProyek({ isOpen, onClose }) {
         <div className="flex-grow overflow-y-auto pr-4">
           <section className="w-full">
             <div className="flex flex-col lg:flex-row gap-4">
-              <div className="flex flex-col w-1/2">
+              <div className="flex flex-col w-full lg:w-1/2">
                 <img
                   src="/image1.png"
                   alt="Gambar"
-                  className="object-cover w-full h-auto rounded-lg aspect-video sm:aspect-square lg:aspect-video"
+                  className="object-cover w-full h-auto rounded-lg aspect-video"
                 />
                 <div className="space-y-3">
                   <p className="font-semibold text-xl lg:text-2xl">
@@ -73,7 +73,7 @@ export default function ModalDetailProyek({ isOpen, onClose }) {
 
                     <div className="flex flex-wrap gap-2">
                       {skills.map((item) => (
-                        <span className="bg-[#33C3E0] rounded-full py-1 px-2 text-white">
+                        <span className="bg-[#33C3E0] rounded-full py-1 px-2 text-white text-xs">
                           {item}
                         </span>
                       ))}
